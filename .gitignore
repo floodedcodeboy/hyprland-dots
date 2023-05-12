@@ -28,3 +28,21 @@ xfce4/
 xsettingsd/
 yay/
 
+nwg-look/config
+EOS-greeter.conf
+eos-update-notifier.first_init
+example.picom.conf
+pavucontrol.ini
+QtProject.conf
+reflector-simple-free-params.txt
+user-dirs.dirs
+user-dirs.locale
+xdg-terminals.list
+zoom.conf
+zoomus.conf
+btop/btop.log
+gtk-3.0/bookmarks
+gtk-3.0/gtk.css
+gtk-3.0/settings.ini
+gtk-4.0/gtk.css
+gtk-4.0/settings.ini
