@@ -1,0 +1,215 @@
+@import "./themes/catppuccin-mocha.css";
+
+* {
+	/* font-family: FantasqueSansMono Nerd Font; */
+	/* font-family: "Font Awesome 5 Free", "SauceCodePro Nerd Font Mono", "Font Awesome 6 Free Solid", "Hack Nerd Font Mono"; */
+	font-family: "Inconsolata Nerd Font Propo", "Font Awesome 5 Free";
+	font-size: 12px;
+	min-height: 0;
+}
+
+window#waybar {
+	background: transparent;
+	/* background: shade(alpha(@base, 0.8), 1.25); */
+	/* background: @base; */
+	border-radius: 0.5rem;
+	
+}
+
+window#waybar > box {
+	margin: 2px 0px;
+	border:none;
+}
+
+tooltip {
+	background: @base;
+	border: 1px solid @pink;
+}
+
+tooltip label {
+	color: @text;
+	padding: 10px;
+}
+
+#workspaces {
+	border-radius: 0.5rem;
+	background-color: @base;
+	margin-right: 8px;
+}
+
+#workspaces button {
+	color: @mauve;
+	transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.68);
+	/* background-color: transparent; */
+}
+
+#workspaces button:hover {
+	color: @rosewater;
+	background: @surface0;
+}
+
+#workspaces button.active {
+	color: @teal;
+}
+
+#workspaces button.active:hover {
+	color: @teal;
+	background: @crust;
+}
+
+.modules-left:first-child {
+	margin-left: 8px;
+}
+
+.modules-right widget>label, #tray {
+	color: @text;
+	background-color: @base;
+	margin-right: 8px;
+	padding: 0 8px;
+	border-radius: 0.5rem;
+	min-width: 12px;
+}
+
+.modules-right widget:last-child>label {
+	/* margin-right: 0; */
+}
+
+.modules-right widget>label {
+	color: @crust;
+}
+.modules-right widget:nth-child(1)>label {
+	color: @blue;
+}
+.modules-right widget:nth-child(2)>label {
+	color: @lavender;
+}
+.modules-right widget:nth-child(3)>label {
+	color: @sapphire;
+}
+.modules-right widget:nth-child(4)>label {
+	color: @sky;
+}
+.modules-right widget:nth-child(5)>label {
+	color: @teal;
+}
+.modules-right widget:nth-child(6)>label {
+	color: @green;
+}
+.modules-right widget:nth-child(7)>label {
+	color: @yellow;
+}
+.modules-right widget:nth-child(8)>label {
+	color: @peach;
+}
+.modules-right widget:nth-child(9)>label {
+	color: @maroon;
+}
+.modules-right widget:nth-child(10)>label {
+	color: @red;
+}
+.modules-right widget:nth-child(11)>label {
+	color: @mauve;
+}
+.modules-right widget:nth-child(12)>label {
+	color: @pink;
+}
+.modules-right widget:nth-child(13)>label {
+	color: @flamingo;
+}
+.modules-right widget:nth-child(14)>label {
+	color: @rosewater;
+}
+
+#backlight {
+
+}
+
+#battery {
+	
+}
+
+#battery.charging {
+	color: @green;
+}
+
+#battery.warning:not(.charging) {
+	color: @maroon;
+}
+
+#bluetooth {
+	color: @sapphire;
+}
+
+#bluetooth.disabled {
+	color: @maroon;
+}
+
+#bluetooth.off {
+	color: @surface2;
+}
+
+#clock {
+
+}
+
+#custom-power_profile {
+	
+}
+
+#custom-recorder {
+	color: @red;
+	padding: 0 8px;
+
+	background-color: @base;
+	margin-right: 8px;
+	padding: 0 8px;
+	border-radius: 0.5rem;
+	min-width: 12px;
+}
+
+#window {
+	color: @text;
+	background-color: @base;
+	margin-right: 8px;
+	padding: 0 8px;
+	border-radius: 0.5rem;
+}
+
+
+#idle_inhibitor {
+	/* background-color: @blue; */
+	color: @surface2;
+}
+
+#idle_inhibitor.activated {
+	/* background-color: @sky; */
+	color: @peach;
+}
+
+#network {
+	
+}
+
+#network.disconnected {
+	background-color: @maroon;
+	color: @base;
+}
+
+#network.disabled {
+	color: @maroon;
+}
+
+#pulseaudio {
+	/* background-color: @pink; */
+}
+
+#pulseaudio.muted {
+	/* background-color: @surface2; */
+	color: @surface2;
+}
+
+#mode {
+	background-color: @red;
+	color: @surface0;
+	font-weight: bold;
+}

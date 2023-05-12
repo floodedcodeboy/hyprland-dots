@@ -1,0 +1,258 @@
+{
+	"spacing": 0,
+	"layer": "top",
+	"margin-top": 5,
+	"margin-bottom": 0,
+	"margin-left": 0,
+	"margin-right": 0,
+	"modules-left": ["wlr/workspaces", "custom/recorder", "hyprland/window"],
+	"modules-center": [],
+	"modules-right": [
+		"tray",
+		"custom/fan1",
+		"custom/fan2",
+		"idle_inhibitor",
+		"cpu",
+		"temperature",
+		"memory",
+		// "custom/notification",
+		"backlight",
+		"pulseaudio",
+		"battery",
+		"custom/power_profile",
+		"network",
+		"bluetooth",
+		"clock", 
+		"custom/session"
+	],
+	"custom/sep": {
+		"format": " "
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"max-length": 80,
+		"interval": 1,
+		"height": 20
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "",
+			"deactivated": ""
+		}
+	},
+	"custom/fan1": {
+		"exec": "sensors | awk '/fan1:/ {print $2}'",
+		"format": "󰈐 {}",
+		"interval": 10
+	},
+	"custom/fan2": {
+		"exec": "sensors | awk '/fan2:/ {print $2}'",
+		"format": "󰈐 {}",
+		"interval": 10
+	},
+	"custom/recorder": {
+		"format": "",
+		"return-type": "json",
+		"interval": 1,
+		"exec": "echo '{\"class\": \"recording\"}'",
+		"exec-if": "pgrep wf-recorder",
+		"tooltip": false,
+		"on-click": "killall -s SIGINT wf-recorder"
+	},
+	"custom/notification": {
+		"tooltip": true,
+		"format": "{icon} ",
+		"format-icons": {
+			"notification": "",
+			"none": "",
+			"dnd-notification": "",
+			"dnd-none": ""
+		},
+		"return-type": "json",
+		"exec-if": "which swaync-client",
+		"exec": "swaync-client -swb",
+		"on-click": "swaync-client -t -sw",
+		"on-click-right": "swaync-client -d -sw",
+		"escape": true
+	},
+	"custom/session": {
+		"format": "{icon}",
+		"format-icons": {
+			"default": "💀"
+		},
+		"toolip": false,
+		"on-click": "wlogout -p layer-shell"
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{icon}",
+		"format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+	},
+	"wlr/workspaces": {
+		"all-outputs": true,
+		"disable-scroll": true,
+		"on-click": "activate",
+		"format": "{icon}",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": []
+		},
+		"format-icons": {
+			"1": "I",
+			"2": "II",
+			"3": "III",
+			"4": "IV",
+			"5": "V",
+			"6": "VI",
+			"7": "VII",
+			"8": "VIII",
+			"9": "IX",
+			"urgent": ""
+		}
+	},
+	"mwlr/workspaces": {
+		"all-outputs": false,
+		"disable-scroll": true,
+		"on-click": "activate",
+		"format": "{icon}",
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": [],
+			"9": [],
+			"10": []
+		},
+		"format-icons": {
+			"1": "I",
+			"2": "II",
+			"3": "III",
+			"4": "IV",
+			"5": "V",
+			"6": "VI",
+			"7": "VII",
+			"8": "VIII",
+			"9": "IX",
+			"10": "X",
+			"urgent": ""
+		}
+	},
+	"xwlr/workspaces": {
+		"all-outputs": true,
+		"on-click": "activate",
+		"format": "{icon}",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"urgent": "",
+			"active": "",
+			"default": ""
+		}
+	},
+	"tray": {
+		"spacing": 10
+	},
+	"clock": {
+		"format": " {:%I:%M%p   %a%e %b}",
+		"interval": 60,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"cpu": {
+		"format": " {usage}%",
+		"tooltip": false
+	},
+	"temperature": {
+		"hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
+		"critical-threshold": 100000,
+		"format": " {temperatureC}°C",
+    	"format-critical": "{temperatureC}°C "
+	},
+	"memory": {
+		"format": " {}%"
+	},
+	"battery": {
+		"states": {
+			"good": 90,
+			"warning": 30,
+			"critical": 15
+		},
+		"format": "{icon} {capacity}%",
+		"format-charging": " {capacity}%",
+		"format-plugged": " {capacity}%",
+		"format-alt": "{icon} {time}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"battery#bat2": {
+		"bat": "BAT2"
+	},
+	"custom/power_profile": {
+		"exec": "sleep 0.3 && /home/jacob/.local/scripts/powerprofilecycle.sh -m",
+		"interval": 1,
+		"on-click": "/home/jacob/.local/scripts/powerprofilecycle.sh",
+		"exec-on-event": true
+	},
+	"bluetooth": {
+		"controller": "sliver",
+		"format": "",
+		"format-disabled": "", // an empty format will hide the module
+		"format-connected": " {num_connections}",
+		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+		"tooltip-format": "{status}: {controller_alias}\t{controller_address}",
+		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+		"on-click": "blueman-manager"
+	},
+	"network": {
+		"format-wifi": "",
+		"format-ethernet": "",
+		"format-disconnected": "",
+		"tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+		"format-linked": "{ifname} (No IP) ",
+		"on-click-right": "nm-connection-editor",
+		"on-click": "bash '/home/jacob/.local/scripts/rofi-network-manager.sh'"
+	},
+	"pulseaudio": {
+		"format": "{icon} {volume}% {format_source}",
+		"format-bluetooth": " {volume}% {format_source}",
+		"format-bluetooth-muted": "  {format_source}",
+		"format-muted": " -% {format_source}",
+		"format-source": "{volume}% ",
+		"format-source-muted": "  ",
+		"format-icons": {
+			"headphone": "",
+			"hands-free": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+	"custom/media": {
+		"format": "{icon} {}",
+		"return-type": "json",
+		"max-length": 40,
+		"format-icons": {
+			"spotify": "",
+			"default": "🎜"
+		},
+		"escape": true
+	}
+}
