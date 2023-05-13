@@ -131,23 +131,23 @@ tooltip label {
 #battery.charging {
 	color: @green;
 	animation-name: charging;
-	animation-duration: 10s;
-	animation-timing-function: ease-out;
+	animation-duration: 1s;
+	animation-timing-function: linear;
 	animation-iteration-count: infinite;
 	animation-direction: alternate-reverse;
 }
 
 @keyframes charging {
 	from {
-		color: @maroon;
+		color: @sapphire;
 	}
 	30% {
-		color: @peach;
+		color: @sky;
 	}
 	60% {
-		color: @yellow;
+		color: @teal;
 	}
-	90% {
+	to {
 		color: @green;
 	}
 }
