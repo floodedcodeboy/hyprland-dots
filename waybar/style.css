@@ -58,16 +58,16 @@ tooltip label {
 }
 
 .modules-left:first-child {
-	margin-left: 8px;
+	margin-left: 6px;
 }
 
 .modules-right widget>label, #tray {
 	color: @text;
 	background-color: @base;
-	margin-right: 8px;
-	padding: 0 8px;
 	border-radius: 0.5rem;
-	min-width: 12px;
+	margin-right: 4px;
+	padding: 6px 10px;
+	/* min-width: 12px; */
 }
 
 .modules-right widget:last-child>label {
@@ -128,6 +128,19 @@ tooltip label {
 	
 }
 
+#battery.good {
+	color: @green;
+}
+
+#battery.warning {
+	color: @yellow;
+}
+
+#battery.critical {
+	background: @red;
+	color: @base;
+}
+
 #battery.charging {
 	color: @green;
 	animation-name: charging;
@@ -150,6 +163,10 @@ tooltip label {
 	to {
 		color: @green;
 	}
+}
+
+#battery.plugged {
+	color: @yellow;
 }
 
 #battery.warning:not(.charging) {
