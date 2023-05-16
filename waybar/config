@@ -44,12 +44,12 @@
 	"custom/fan1": {
 		"exec": "sensors | awk '/fan1:/ {print $2}'",
 		"format": "󰈐 {}",
-		"interval": 10
+		"interval": 5
 	},
 	"custom/fan2": {
 		"exec": "sensors | awk '/fan2:/ {print $2}'",
 		"format": "󰈐 {}",
-		"interval": 10
+		"interval": 5
 	},
 	"custom/recorder": {
 		"format": "",
@@ -178,7 +178,7 @@
 	},
 	"temperature": {
 		"hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
-		"critical-threshold": 100000,
+		"critical-threshold": 90000,
 		"format": " {temperatureC}°C",
     	"format-critical": "{temperatureC}°C "
 	},
