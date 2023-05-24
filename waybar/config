@@ -9,8 +9,7 @@
 	"modules-center": [],
 	"modules-right": [
 		"tray",
-		"custom/fan1",
-		"custom/fan2",
+		"custom/fan",
 		"idle_inhibitor",
 		"cpu",
 		"temperature",
@@ -41,15 +40,12 @@
 			"deactivated": ""
 		}
 	},
-	"custom/fan1": {
-		"exec": "sensors | awk '/fan1:/ {print $2}'",
-		"format": "󰈐 {}",
-		"interval": 5
-	},
-	"custom/fan2": {
-		"exec": "sensors | awk '/fan2:/ {print $2}'",
-		"format": "󰈐 {}",
-		"interval": 5
+	"custom/fan": {
+		"exec": "/home/jacob/.config/hypr/scripts/fans.sh",
+		"return-type": "json",
+		"format": "󰈐{}",
+		"interval": 5,
+		"escape": true
 	},
 	"custom/recorder": {
 		"format": "",
@@ -231,9 +227,9 @@
 		"format": "{icon} {volume}% {format_source}",
 		"format-bluetooth": " {volume}% {format_source}",
 		"format-bluetooth-muted": "  {format_source}",
-		"format-muted": " -% {format_source}",
+		"format-muted": " {format_source}",
 		"format-source": "{volume}% ",
-		"format-source-muted": "  ",
+		"format-source-muted": "",
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
