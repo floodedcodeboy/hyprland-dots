@@ -1,0 +1,5 @@
+timeout 10 'if pgrep -x swaylock; then hyprctl dispatch dpms off eDP-1; fi'
+timeout 90 'brightnessctl s 20% -s' resume 'brightnessctl -r'
+timeout 300 swaylock
+timeout 360 'hyprctl dispatch dpms off eDP-1' resume 'hyperctl dispatch dpms on eDP-1'
+before-sleep swaylock
