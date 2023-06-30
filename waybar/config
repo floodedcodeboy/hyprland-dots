@@ -78,7 +78,7 @@
 			"default": "💀"
 		},
 		"toolip": false,
-		"on-click": "wlogout -p layer-shell"
+		"on-click": "wlogout -p xdg"
 	},
 	"backlight": {
 		"device": "intel_backlight",
@@ -164,7 +164,7 @@
 		"spacing": 10
 	},
 	"clock": {
-		"format": " {:%I:%M%p   %a%e %b}",
+		"format": " {:%I:%M%p   %a %e %b}",
 		"interval": 60,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
@@ -192,9 +192,6 @@
 		"format-plugged": " {capacity}%",
 		"format-alt": "{icon} {time}",
 		"format-icons": ["", "", "", "", ""]
-	},
-	"battery#bat2": {
-		"bat": "BAT2"
 	},
 	"custom/power_profile": {
 		"exec": "sleep 0.3 && /home/jacob/.local/scripts/powerprofilecycle.sh -m",
