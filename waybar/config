@@ -9,7 +9,7 @@
 	"margin-left": 0,
 	"margin-right": 0,
 	"modules-left": [
-		"wlr/workspaces", 
+		"hyprland/workspaces",
 		"custom/recorder", 
 		"hyprland/window"
 	],
