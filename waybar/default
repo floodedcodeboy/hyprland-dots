@@ -59,8 +59,7 @@
 		"device": "intel_backlight",
 		"format": "{icon}",
 		"format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
-		"tooltip" : true,
-		"tooltip-format"
+		"tooltip" : true
 	},
 	"hyprland/workspaces": {
 		"all-outputs": true,
