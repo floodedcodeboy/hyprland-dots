@@ -1,34 +1,26 @@
 @import "./themes/catppuccin-mocha.css";
+@import "./themes/variables.css";
 
 * {
-	/* font-family: FantasqueSansMono Nerd Font; */
-	/* font-family: "Font Awesome 5 Free", "SauceCodePro Nerd Font Mono", "Font Awesome 6 Free Solid", "Hack Nerd Font Mono"; */
-	font-family: "Inconsolata Nerd Font Propo", "Font Awesome 5 Free";
+	font-family: "SauceCodePro Nerd Font Mono", "Font Awesome 6 Free";
 	font-size: 12px;
 	min-height: 0;
 }
 
 window#waybar {
 	background: transparent;
-	/* background: shade(alpha(@base, 0.8), 1.25); */
-	/* background: @base; */
-	border-radius: 0.5rem;
-	
-}
-
-window#waybar > box {
-	margin: 2px 0px;
-	border:none;
+	border-radius: 0.5rem;	
 }
 
 tooltip {
 	background: @base;
+	opacity: 0.9;
 	border: 1px solid @pink;
 }
 
 tooltip label {
 	color: @text;
-	padding: 10px;
+	padding: 8px;
 }
 
 #workspaces {
@@ -40,7 +32,6 @@ tooltip label {
 #workspaces button {
 	color: @mauve;
 	transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.68);
-	/* background-color: transparent; */
 }
 
 #workspaces button:hover {
@@ -60,18 +51,27 @@ tooltip label {
 .modules-left:first-child {
 	margin-left: 6px;
 }
-
-.modules-right widget>label, #tray {
-	color: @text;
-	background-color: @base;
-	border-radius: 0.5rem;
-	margin-right: 4px;
-	padding: 6px 10px;
-	/* min-width: 12px; */
+.modules-right:last-child {
+	margin-right: 6px;
 }
 
-.modules-right widget:last-child>label {
-	/* margin-right: 0; */
+.modules-right box>widget>label {
+	color: @text;
+	margin-left: 8px;
+	min-width: 15px;
+}
+
+.modules-right box>widget:first-child>label {
+	margin-left: 0;
+}
+
+#power, #processing, #networking, #systray, #audio, #datetime, #session {
+	background-color: @base;
+	border-radius: 0.5rem;
+
+	margin-left: 6px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .modules-right widget>label {
@@ -119,6 +119,7 @@ tooltip label {
 .modules-right widget:nth-child(14)>label {
 	color: @rosewater;
 }
+
 
 #backlight {
 
@@ -170,6 +171,7 @@ tooltip label {
 }
 
 #battery.warning:not(.charging) {
+	background-color: @red;
 	color: @maroon;
 }
 
@@ -195,23 +197,41 @@ tooltip label {
 
 #custom-fan.off {
 	color: @surface2;
+	/* animation: none; */
 }
 
 #custom-fan.low {
 	color: @green;
+	animation-name: spin;
+    animation-duration: 3s;
 }
 
 #custom-fan.medium {
 	color: @peach;
+	animation-name: spin;
+    animation-duration: 1.5s;
 }
 
 #custom-fan.high {
 	color: @red;
+	animation-name: spin;
+    animation-duration: 0.75s;
+}
+
+#custom-fan {
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
 
 @keyframes spin {
+	from {
+		font-size: 12px;
+	}
+	60% {
+		font-size: 11px;
+	}
 	to {
-		-gtk-icon-transform: rotate(1turn);
+		font-size:12px;
 	}
 }
 
@@ -236,12 +256,14 @@ tooltip label {
 
 
 #idle_inhibitor {
-	/* background-color: @blue; */
 	color: @surface2;
 }
 
+#idle_inhibitor label span {
+	border:1px solid yellow;
+}
+
 #idle_inhibitor.activated {
-	/* background-color: @sky; */
 	color: @peach;
 }
 
@@ -259,11 +281,10 @@ tooltip label {
 }
 
 #pulseaudio {
-	/* background-color: @pink; */
+	/* font-size:24px; */
 }
 
 #pulseaudio.muted {
-	/* background-color: @surface2; */
 	color: @surface2;
 }
 
@@ -271,4 +292,12 @@ tooltip label {
 	background-color: @red;
 	color: @surface0;
 	font-weight: bold;
+}
+
+#custom-session {
+
+}
+
+.not-power {
+	border:1px solid red;
 }

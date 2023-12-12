@@ -9,7 +9,7 @@
 		"height": 20
 	},
 	"idle_inhibitor": {
-		"format": "{icon}",
+		"format": "<span font-family=\"Font Awesome 6 Free\">{icon}</span>",
 		"format-icons": {
 			"activated": "",
 			"deactivated": ""
@@ -18,12 +18,12 @@
 	"custom/fan": {
 		"exec": "/home/jacob/.config/hypr/scripts/fans.sh",
 		"return-type": "json",
-		"format": "󰈐{}",
+		"format": "<span font-family=\"Font Awesome 6 Free\">󰈐</span>{}",
 		"interval": 5,
 		"escape": true
 	},
 	"custom/recorder": {
-		"format": "",
+		"format": "<span font-family=\"Font Awesome 6 Free\"></span>",
 		"return-type": "json",
 		"interval": 1,
 		"exec": "echo '{\"class\": \"recording\"}'",
@@ -48,16 +48,16 @@
 		"escape": true
 	},
 	"custom/session": {
-		"format": "{icon}",
+		"format": "<span font-family=\"Font Awesome 6 Free\">{icon}</span>",
 		"format-icons": {
-			"default": "💀"
+			"default": ""
 		},
 		"tooltip": false,
 		"on-click": "wlogout -p xdg"
 	},
 	"backlight": {
 		"device": "intel_backlight",
-		"format": "{icon}",
+		"format": "<span font-family=\"Font Awesome 6 Pro Regular\">{icon}</span>",
 		"format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
 		"tooltip" : true
 	},
@@ -91,25 +91,26 @@
 		}
 	},
 	"tray": {
-		"spacing": 10
+		"spacing": 10,
+		"icon-size": 14
 	},
 	"clock": {
-		"format": " {:%I:%M%p   %a %e %b}",
+		"format": "<span font-family=\"Font Awesome 6 Free\"></span> {:%I:%M%p  <span font-family=\"Font Awesome 6 Free\"></span> %a %e %b}",
 		"interval": 60,
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"cpu": {
-		"format": " {usage}%",
+		"format": "<span font-family=\"Font Awesome 6 Free\"></span> {usage}%",
 		"tooltip": false
 	},
 	"temperature": {
 		"hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",
 		"critical-threshold": 90000,
-		"format": " {temperatureC}°C",
+		"format": "<span font-family=\"Font Awesome 6 Free\"></span> {temperatureC}°C",
     	"format-critical": "{temperatureC}°C "
 	},
 	"memory": {
-		"format": " {}%"
+		"format": "<span font-family=\"Font Awesome 6 Free\"></span> {}%"
 	},
 	"battery": {
 		"states": {
@@ -117,46 +118,47 @@
 			"warning": 30,
 			"critical": 15
 		},
-		"format": "{icon} {capacity}%",
-		"format-charging": " {capacity}%",
-		"format-plugged": " {capacity}%",
-		"format-alt": "{icon} {time}",
+		"format": "<span font-family=\"Font Awesome 6 Free\">{icon}</span> {capacity}%",
+		"format-charging": "<span font-family=\"Font Awesome 6 Free\"></span> {capacity}%",
+		"format-plugged": "<span font-family=\"Font Awesome 6 Free\"></span> {capacity}%",
+		"format-alt": "<span font-family=\"Font Awesome 6 Free\">{icon}</span> {time}",
 		"format-icons": ["", "", "", "", ""]
 	},
 	"custom/power_profile": {
 		"exec": "sleep 0.3 && /home/jacob/.local/scripts/powerprofilecycle.sh -m",
 		"interval": 1,
 		"on-click": "/home/jacob/.local/scripts/powerprofilecycle.sh",
-		"exec-on-event": true
+		"exec-on-event": true,
+		"format": "<span font-family=\"Font Awesome 6 Free\">{}</span>"
 	},
 	"bluetooth": {
 		"controller": "sliver",
-		"format": "",
+		"format": "<span font-family=\"Font Awesome 6 Free\"></span>",
 		"format-disabled": "", // an empty format will hide the module
-		"format-connected": " {num_connections}",
-		"format-connected-battery": " {device_alias} {device_battery_percentage}%",
+		"format-connected": "<span font-family=\"Font Awesome 6 Free\"></span> {num_connections}",
+		"format-connected-battery": "<span font-family=\"Font Awesome 6 Free\"></span> {device_alias} {device_battery_percentage}%",
 		"tooltip-format": "{status}: {controller_alias}\t{controller_address}",
 		"tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
 		"on-click": "blueman-manager"
 	},
 	"network": {
-		"format-wifi": "",
-		"format-ethernet": "",
-		"format-disconnected": "",
-		"tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
+		"format-wifi": "<span font-family=\"Font Awesome 6 Free\"></span>",
+		"format-ethernet": "<span font-family=\"Font Awesome 6 Free\"></span>",
+		"format-disconnected": "<span font-family=\"Font Awesome 6 Free\"></span>",
+		"tooltip-format-wifi": "<span font-family=\"Font Awesome 6 Free\"></span> {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
 		"tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n⬆️ {bandwidthUpBits} ⬇️ {bandwidthDownBits}",
 		"format-linked": "{ifname} (No IP) ",
 		"on-click-right": "nm-connection-editor",
 		"on-click": "bash '/home/jacob/.local/scripts/rofi-network-manager.sh'"
 	},
 	"pulseaudio": {
-		"format": "{icon} {volume}% {format_source}",
-		"format-bluetooth": " {volume}% {format_source}",
-		"format-bluetooth-muted": "  {format_source}",
-		"format-muted": " {format_source}",
-		"format-source": "{volume}% ",
-		"format-source-muted": "",
+		"format": "<span font-family=\"Font Awesome 6 Free\">{icon}</span> {volume}% {format_source}",
+		"format-bluetooth": "<span font-family=\"Font Awesome 6 Free\"></span> {volume}% {format_source}",
+		"format-bluetooth-muted": "<span font-family=\"Font Awesome 6 Free\"></span>  {format_source}",
+		"format-muted": "<span font-family=\"Font Awesome 6 Free\"></span> {format_source}",
+		"format-source": "{volume}% <span font-family=\"Font Awesome 6 Free\"></span>",
+		"format-source-muted": "<span font-family=\"Font Awesome 6 Free\"></span>",
 		"format-icons": {
 			"headphone": "",
 			"hands-free": "",
@@ -177,5 +179,25 @@
 			"default": "🎜"
 		},
 		"escape": true
+	},
+	"custom/quit": {
+		"format": "<span font-family=\"Font Awesome 6 Free\">󰗼</span>",
+		"tooltip": false,
+		"on-click": "hyprctl dispatch exit"
+	},
+	"custom/lock": {
+		"format": "<span font-family=\"Font Awesome 6 Free\">󰍁</span>",
+		"tooltip": false,
+		"on-click": "swaylock"
+	},
+	"custom/reboot": {
+		"format": "<span font-family=\"Font Awesome 6 Free\">󰜉</span>",
+		"tooltip": false,
+		"on-click": "reboot"
+	},
+	"custom/power": {
+		"format": "<span font-family=\"Font Awesome 6 Free\"></span>",
+		"tooltip": false,
+		"on-click": "shutdown now"
 	}
 }

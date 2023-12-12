@@ -9,26 +9,87 @@
 	"margin-left": 0,
 	"margin-right": 0,
 	"modules-left": [
-		"hyprland/workspaces",
-		"custom/recorder", 
-		"hyprland/window"
+		"group/left"
 	],
 	"modules-center": [],
 	"modules-right": [
-		"tray",
-		"custom/fan",
-		"idle_inhibitor",
-		"cpu",
-		"temperature",
-		"memory",
-		// "custom/notification",
-		"backlight",
-		"pulseaudio",
-		"battery",
-		"custom/power_profile",
-		"network",
-		"bluetooth",
-		"clock", 
-		"custom/session"
-	]
+		"group/systray",
+		"group/processing",
+		"group/audio",
+		"group/power",
+		"group/networking",
+		"group/datetime",
+		"group/session",
+	],
+	"group/left": {
+		"orientation": "inherit",
+		"modules": [
+			"hyprland/workspaces",
+			"custom/recorder", 
+			"hyprland/window"
+		]
+	},
+	"group/systray": {
+		"orientation": "inherit",
+		"modules": [
+			"tray"
+		]
+	},
+	"group/processing": {
+		"orientation": "inherit",
+		"modules": [
+			"custom/fan",
+			"cpu",
+			"temperature",
+			"memory"
+		]
+	},
+	"group/audio": {
+		"orientation": "inherit",
+		"modules": [
+			"pulseaudio"
+		]
+	},
+	"group/power": {
+		"orientation": "inherit",
+		"modules": [
+			"idle_inhibitor",
+			"backlight",
+			"custom/power_profile",
+			"battery"
+		]
+	},
+	"group/networking": {
+		"orientation": "inherit",
+		"modules": [
+			"network",
+			"bluetooth"
+		]
+	},
+	"group/datetime": {
+		"orientation": "inherit",
+		"modules": [
+			"clock"
+		]
+	},
+	"group/session": {
+		"orientation": "inherit",
+		"modules": [
+			"custom/session"
+		]
+	},
+	"group/group-power": {
+		"orientation": "inherit",
+		"drawer": {
+			"transition-duration": 500,
+			"children-class": "not-power",
+			"transition-left-to-right": false,
+		},
+		"modules": [
+			"custom/power", // First element is the "group leader" and won't ever be hidden
+			"custom/quit",
+			"custom/lock",
+			"custom/reboot",
+		]
+	}
 }
