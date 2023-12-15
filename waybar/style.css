@@ -9,7 +9,7 @@
 
 window#waybar {
 	background: transparent;
-	border-radius: 0.5rem;	
+	border-radius: 0.5rem;
 }
 
 tooltip {
@@ -55,26 +55,37 @@ tooltip label {
 	margin-right: 6px;
 }
 
+.modules-right>box {
+	background-color: @base;
+	border-radius: 0.5rem;
+	padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+	margin-right: 5px;
+}
+
+.modules-right>box>widget {
+	border-radius: 0.5rem;
+}
+
 .modules-right box>widget>label {
 	color: @text;
-	margin-left: 8px;
+	border-radius: 0.5rem;
+	padding: 0 0.25rem 0 0.25rem;
+	margin-right: 0.5rem;
 	min-width: 15px;
 }
 
+.modules-right box>widget:last-child>label {
+	margin-right: 0;
+}
 .modules-right box>widget:first-child>label {
-	margin-left: 0;
+	/* margin-left: 0; */
 }
 
 #power, #processing, #networking, #systray, #audio, #datetime, #session {
-	background-color: @base;
-	border-radius: 0.5rem;
 
-	margin-left: 6px;
-	padding-left: 10px;
-	padding-right: 10px;
 }
 
-.modules-right widget>label {
+.modules-right box>widget>label {
 	color: @crust;
 }
 .modules-right widget:nth-child(1)>label {
