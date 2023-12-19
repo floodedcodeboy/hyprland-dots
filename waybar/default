@@ -4,9 +4,18 @@
 	},
 	"hyprland/window": {
 		"format": "{}",
-		"max-length": 80,
+		"max-length": 120,
 		"interval": 1,
-		"height": 24
+		"height": 24,
+		"rewrite": {
+			"(.*) — Mozilla Firefox": "<span font='10' rise='-1000'>󰈹</span>  $1",
+			"(.*) - Visual Studio Code": "<span font='10' rise='-1000'>󰨞</span>  $1",
+			"(.*) - Docker Desktop": "<span font='10' rise='-1000'>󰡨</span>  $1",
+			"(.*) - Google Chrome": "<span font='10' rise='-1000'></span>  $1",
+			"Steam": "<span font='10' rise='-1000'>󰓓</span>",
+			"(.*) - Slack": "<span font='10' rise='-1000'>󰒱</span>  $1",
+			"Spotify Premium": "<span font='10' rise='-1000'>󰓇</span>"
+		}
 	},
 	"idle_inhibitor": {
 		"format": "<span font-family=\"Font Awesome 6 Free\">{icon}</span>",

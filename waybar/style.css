@@ -2,8 +2,9 @@
 @import "./themes/variables.css";
 
 * {
-	font-family: "SauceCodePro Nerd Font Mono", "Font Awesome 6 Free";
-	font-size: 12px;
+	/* font-family: "SauceCodePro Nerd Font Mono", "Font Awesome 6 Free"; */
+	font-family: "BlexMono Nerd Font", "Font Awesome 6 Free";
+	font-size: 11px;
 	min-height: 0;
 }
 
@@ -155,12 +156,12 @@ tooltip label {
 }
 
 #battery.warning {
-	color: @yellow;
+	color: @red;
 }
 
 #battery.critical {
 	background: @red;
-	color: @base;
+	color: @surface0;
 }
 
 #battery.charging {
@@ -193,7 +194,7 @@ tooltip label {
 
 #battery.warning:not(.charging) {
 	background-color: @red;
-	color: @maroon;
+	color: @surface0;
 }
 
 #bluetooth {
@@ -273,6 +274,10 @@ tooltip label {
 	/* 
 	margin-right: 8px;
 	*/
+}
+
+span#window {
+	border:1px solid red;
 }
 
 
