@@ -109,8 +109,18 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"cpu": {
-		"format": "<span font-family=\"Font Awesome 6 Free\"></span> {usage}%",
-		"tooltip": false
+		"interval": 2,
+		"format": "{icon0}{icon1}{icon2}{icon3}{icon4}{icon5}{icon6}{icon7}",
+		"format-icons": [
+			"<span color='#a6e3a1'>▁</span>", // green
+			"<span color='#74c7ec'>▂</span>", // blue
+			"<span color='#f5e0dc'>▃</span>", // white
+			"<span color='#f5e0dc'>▄</span>", // white
+			"<span color='#f9e2af'>▅</span>", // yellow
+			"<span color='#f9e2af'>▆</span>", // yellow
+			"<span color='#fab387'>▇</span>", // orange
+			"<span color='#f38ba8'>█</span>"  // red
+		]
 	},
 	"temperature": {
 		"hwmon-path": "/sys/class/hwmon/hwmon6/temp1_input",

@@ -1,0 +1,27 @@
+/**
+ * Tokyo Night - Dark 
+ * taken from https://github.com/enkia/tokyo-night-vscode-theme
+ *
+ */
+@define-color red       #f7768e;
+@define-color tangerine #ff9e64;
+@define-color equator   #e0af68;
+@define-color green     #9ece6a;
+@define-color charlotte #73daca;	/* Object literal keys, Markdown links, Terminal Green */
+@define-color lightblue #b4f9f8;  /* Regex literal strings */ 
+@define-color teal      #2ac3de;  /* Language support functions, CSS HTML elements */ 
+@define-color skyblue   #7dcfff;  /* Object properties, Regex quantifiers and flags, Markdown headings, Terminal Cyan, Markdown code, Import/export keywords */
+@define-color maliblue  #7aa2f7;  /* Function names, CSS property names, Terminal Blue */ 
+@define-color purple    #bb9af7;  /* rgb(187, 154, 247) Control Keywords, Storage Types, Regex symbols and operators, HTML Attributes, Terminal Magenta */
+@define-color merano    #c0caf5;  /* Variables, Class names, Terminal White */
+/* 
+@define-color #a9b1d6;  Editor Foreground
+@define-color #9aa5ce;  Markdown Text, HTML Text
+*/
+@define-color dusty     #cfc9c2; /* Parameters inside functions (semantic highlighting only) */
+@define-color darkgrey  #565f89; /* Comments */
+@define-color black     #414868; /* rgba(65, 72, 104) Terminal Black */
+@define-color storm     #24283b; /* Editor Background (Storm) */
+@define-color darknight #1a1b26; /* rgb(26, 27, 38) Editor Background (Night)*/
+
+@define-color base rgba(26, 27, 38, 0.7);

@@ -2,18 +2,18 @@ daemonize
 show-failed-attempts
 clock
 screenshots
-effect-pixelate=5
-effect-vignette=0.5:0.5
+effect-pixelate=24
+effect-vignette=0.25:0.45
 color=1f1d2e20
-font="Inter"
+font="Space Mono"
 indicator
-indicator-radius=200
+indicator-radius=150
 indicator-thickness=20
-line-color=1f1d2e
-ring-color=191724
-inside-color=1f1d2e
+line-color=1f1d2ecc
+ring-color=191724aa
+inside-color=1f1d2eaa
 key-hl-color=eb6f92
-separator-color=00000000
+separator-color=000000ff
 text-color=cdd6f4
 text-caps-lock-color=""
 line-ver-color=eb6f92
@@ -29,8 +29,8 @@ ring-clear-color=9ccfd8
 line-clear-color=1f1d2e
 line-wrong-color=1f1d2e
 bs-hl-color=31748f
-grace=5
+grace=15
 grace-no-mouse
 datestr="%x %d.%m"
-fade-in="1"
+fade-in="0.9"
 ignore-empty-password

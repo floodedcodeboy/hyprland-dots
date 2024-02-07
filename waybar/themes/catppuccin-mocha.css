@@ -6,6 +6,7 @@
 */
 
 @define-color base   #1e1e2e;
+@define-color baseRgb rgba(30, 30, 46, 0.8);
 @define-color mantle #181825;
 @define-color crust  #11111b;
 

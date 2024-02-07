@@ -1,4 +1,4 @@
-@import "./themes/catppuccin-mocha.css";
+@import "./themes/tokyo-night.css";
 @import "./themes/variables.css";
 
 * {
@@ -15,13 +15,13 @@ window#waybar {
 }
 
 tooltip {
-	background: @baseRgb;
+	background: @base;
 	opacity: 0.9;
 	border: 1px solid @pink;
 }
 
 tooltip label {
-	color: @text;
+	color: @maliblue;
 	padding: 8px;
 }
 
@@ -58,13 +58,12 @@ tooltip label {
 .modules-left:first-child {
 	margin-left: 6px;
 }
-
 .modules-right:last-child {
 	margin-right: 6px;
 }
 
 .modules-right>box, .modules-left>box {
-	background-color: @baseRgb;
+	background-color: @base;
 	opacity: 0.9;
 	border-radius: 0.5rem;
 	padding: 0.3rem 0.5rem 0.3rem 0.5rem;
@@ -78,7 +77,7 @@ tooltip label {
 }
 
 .modules-right>box>widget>label, .modules-left>box>widget>label {
-	color: @text;
+	color: @maliblue;
 	border-radius: 0.5rem;
 	padding: 0 0.25rem 0 0.25rem;
 	margin-right: 0.5rem;
@@ -99,7 +98,7 @@ tooltip label {
 }
 
 .modules-right box>widget>label {
-	color: @lavender;
+	color: @lightblue;
 }
 /* .modules-right widget:nth-child(1)>label {
 	color: @blue;
@@ -146,11 +145,11 @@ tooltip label {
 
 
 #backlight {
-	color: @peach;
+
 }
 
 #battery {
-	color: @yellow;	
+	
 }
 
 #battery.good {
@@ -211,39 +210,35 @@ tooltip label {
 	color: @surface2;
 }
 
-#processing {
-
-}
-
-#cpu {
-	opacity: 0.7;
-}
-
 #clock {
-	color: @teal;
+
 }
 
 #custom-power_profile {
-	color: @green;
+	
 }
 
 #custom-fan.off {
 	color: @surface2;
+	/* animation: none; */
 }
 
 #custom-fan.low {
 	color: @green;
-	animation:spin 5s linear infinite;
+	animation-name: spin;
+    animation-duration: 3s;
 }
 
 #custom-fan.medium {
 	color: @peach;
-	animation:spin 3.5s linear infinite;
+	animation-name: spin;
+    animation-duration: 1.5s;
 }
 
 #custom-fan.high {
 	color: @red;
-	animation:spin 2s linear infinite;
+	animation-name: spin;
+    animation-duration: 0.75s;
 }
 
 #custom-fan {
@@ -257,7 +252,6 @@ tooltip label {
 	}
 	60% {
 		font-size: 11px;
-		color: transparent;
 	}
 	to {
 		font-size:12px;
@@ -265,7 +259,7 @@ tooltip label {
 }
 
 #custom-recorder {
-	background-color: @baseRgb;
+	background-color: @base;
 	border-radius: 0.5rem;
 	color: @red;
 	margin-right: 5px;
@@ -275,9 +269,12 @@ tooltip label {
 
 #window {
 	color: @text;
-	background-color: @baseRgb;
+	background-color: @base;
 	border-radius: 0.5rem;
 	padding: 0 8px;
+	/* 
+	margin-right: 8px;
+	*/
 }
 
 span#window {
@@ -294,16 +291,16 @@ span#window {
 }
 
 #idle_inhibitor.activated {
-	color: @green;
+	color: @peach;
 }
 
 #network {
-	color: @lavender;
+	
 }
 
 #network.disconnected {
 	background-color: @maroon;
-	color: @baseRgb;
+	color: @base;
 }
 
 #network.disabled {
@@ -312,7 +309,6 @@ span#window {
 
 #pulseaudio {
 	/* font-size:24px; */
-	color: @sky;
 }
 
 #pulseaudio.muted {
@@ -326,7 +322,7 @@ span#window {
 }
 
 #custom-session {
-	color: @red;
+
 }
 
 .not-power {
